@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+*.log
+*.swp
+.DS_Store
+.vscode
+.idea
+*.iml
+coverage
+dist
+.azure
