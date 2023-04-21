@@ -50,7 +50,7 @@ router.get('/:type(sum|subtract)' ...
 node ./bin/www
 
 ## Build / Test Container 
-docker build -t benroeck-async-ext:latest .
+docker build -t benroeck-async-ext:latest .  
 docker run -it -p 3000:3000 benroeck-async-ext:latest
 
 ## Test Endpoints.
@@ -66,5 +66,5 @@ curl -X GET -H "Content-Type: application/json"  -H "sf-external-function-query-
 az webapp up -g ResourceGroup -n NameOfWebapp
 
 ## Build / Test Container 
-docker build -t benroeck-async-ext:latest .
+docker build -t benroeck-async-ext:latest .  
 docker run -it -p 3000:3000 benroeck-async-ext:latest
