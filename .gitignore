@@ -1,3 +1,6 @@
+# Local
+temp/
+
 # Logs
 logs
 *.log

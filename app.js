@@ -16,7 +16,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 const testRouter = require('./routes/test'); // This is the path to your function.js 
 app.use('/test/', testRouter); // This is the URL path for your function 
 
-
+// Add new functions here *****************************************************
+const openaiRouter = require('./routes/openai'); // This is the path to your function.js
+app.use('/openai/', openaiRouter); // This is the URL path for your function
 
 // *****************************************************
 // catch 404 and forward to error handler
