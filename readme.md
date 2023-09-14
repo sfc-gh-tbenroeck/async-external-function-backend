@@ -25,8 +25,10 @@ There is a delay in sum() is to allow for testing polling for status:
   - `curl -X GET -H "Content-Type: application/json"  -H "sf-external-function-query-batch-id: 123123123" "http://localhost:3000/test/sum"`
 
 ## Azure OPENAI Route
-Rename the `.env.template` file to `.env` and update the values for your Azure OpenAI Deployement.  Test using the following commands:
+Optionally rename the `.env.template` file to `.env` for local testing.  The `.env` file is not being added to the Dockerfile but you can choose to do so. Update the values for your Azure OpenAI Deployement.  Run and Test using the following commands:
 ```
+docker run -it -p 3000:3000 -e AZURE_OPENAI_BASE="https://YOUROPENAI.openai.azure.com/" -e AZURE_OPENAI_KEY="YOUR_SECRET_KEY" -e AZURE_OPENAI_DEPLOYMENTID="YOUR_DEPLOYMENT_ID" async-ext-func:latest
+
 curl -X POST -H "Content-Type: application/json" -H "sf-external-function-query-batch-id: 123123123" -d '{"data": [[0, "when is easter in 2024"], [1, "what day of the week in Christmas on in 2024"], [2, "What day of the week is Christmas"], [3, "What are some good places to visit in Bend, OR?"], [4, "What is half of sixty?"]]}' "http://localhost:3000/openai/v1/chat/completions"
 
 curl -X GET -H "Content-Type: application/json"  -H "sf-external-function-query-batch-id: 123123123" "http://localhost:3000/openai/v1/chat/completions"

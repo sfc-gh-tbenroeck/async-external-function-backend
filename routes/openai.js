@@ -9,7 +9,7 @@ const messageDB = new Map();
 const { OpenAIClient, AzureKeyCredential } = require("@azure/openai");
 
 const client = new OpenAIClient(
-  `https://${process.env.AZURE_OPENAI_BASE}.openai.azure.com/`,
+  `${process.env.AZURE_OPENAI_BASE}`,
   new AzureKeyCredential(process.env.AZURE_OPENAI_KEY)
 );
 azure_openai_deploymentId = process.env.AZURE_OPENAI_DEPLOYMENTID
